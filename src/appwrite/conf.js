@@ -1,4 +1,4 @@
-import config from '../config.js';
+import config from '../config'
 import { Client, ID, Databases, Storage, Query } from "appwrite";
 
 // bucket - storage
