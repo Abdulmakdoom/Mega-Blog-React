@@ -2,7 +2,7 @@ import React from "react";
 import appwriteService from "../appwrite/conf";
 import {Link} from 'react-router-dom'
  
-function PostCard ({$id, title, featuredImage}) {
+function PostCard ({$id, title, featuredImage}) { // yaha agr value destructure lene ka liye humy destructure krkay bajhna padega phale. 
     return (
         <Link to={`/post/${$id}`}>
             <div className="w-full bg-gray-100 rounded-xl p-4">

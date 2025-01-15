@@ -26,3 +26,7 @@ export default Input;
 // forwardRef -- yeh ek function hai jo ek component ko forward krta hai 
 // simple words me keh skte hain k yeh ek component ko forward krta hai to parent component me
 // ref baha sai pass bhi kiya jayega or yaha sai state ka access liya jayega 
+
+
+
+

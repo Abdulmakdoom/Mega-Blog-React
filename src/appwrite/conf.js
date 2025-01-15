@@ -1,4 +1,4 @@
-import config from '../config'
+import config from '../config/config.js'
 import { Client, ID, Databases, Storage, Query } from "appwrite";
 
 // bucket - storage
@@ -138,3 +138,5 @@ export class Service{
 
 const service = new Service();
 export default service;
+
+
