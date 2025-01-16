@@ -2,10 +2,10 @@ import config from '../config/config.js';
 import { Client, Account, ID } from "appwrite";
 
 export class AuthService {
-    client = new Client();
-    account;
+    client = new Client(); 
+    account; 
 
-    constructor() {
+    constructor() {  // constructor is a method that is called when an instance of a class is created , In this case, the constructor is called when the AuthService object is created, and it initializes the client and account properties.
         this.client
             .setEndpoint(config.appwriteUrl)
             .setProject(config.appwriteProjectId);
@@ -49,7 +49,7 @@ export class AuthService {
 
     async logout() {
         try {
-            return await this.account.deleteSessions();
+            return await this.account.deleteSessions(); // delete account/ delete session
         } catch (error) {
             throw error;
         }
@@ -57,10 +57,11 @@ export class AuthService {
     
 }
 
-const authService = new AuthService();
+const authService = new AuthService(); // as a singleton, we only need one instance of the AuthService class, so we create an instance of the AuthService class and export it as a constant. 
+                                       // so output will be a object of AuthService class
 
 
-export default authService;
+export default authService; // obj of AuthService class is exported as default;
 
 
 

@@ -2,7 +2,7 @@ import config from '../config/config.js'
 import { Client, ID, Databases, Storage, Query } from "appwrite";
 
 // bucket - storage
-
+// databases - collection of documents/data
 export class Service{
     client = new Client();
     Databases;
@@ -101,30 +101,28 @@ export class Service{
     // File upload Service
 
     async uploadFile(file){
-        try{
+        try {
             return await this.bucket.createFile(
                 config.appwriteBucketId,
                 ID.unique(),
                 file
-            );
-        } catch (error){
-            console.log(error);
-            return false;
-            
+            )
+        } catch (error) {
+            console.log("Appwrite serive :: uploadFile :: error", error);
+            return false
         }
     }
 
-    async deleteFile(fileId ){
-        try{
+    async deleteFile(fileId){
+        try {
             await this.bucket.deleteFile(
                 config.appwriteBucketId,
                 fileId
             )
-            return true;
-        } catch (error){
-            console.log(error);
-            return false;
-            
+            return true
+        } catch (error) {
+            console.log("Appwrite serive :: deleteFile :: error", error);
+            return false
         }
     }
 
