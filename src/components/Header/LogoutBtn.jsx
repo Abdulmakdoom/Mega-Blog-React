@@ -6,7 +6,7 @@ import { logout } from "../../store/authSlice";
 function LogoutBtn() {
     const dispatch = useDispatch()
     const logoutHandler = () => {
-        authService.logout().then(()=> {
+        authService.logout().then(()=> { // now you get the promise, to handle the promise we use .then
             dispatch(logout())
         })
     }

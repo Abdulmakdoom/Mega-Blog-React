@@ -12,7 +12,7 @@ function Login () {
     const { register, handleSubmit} = useForm()  // handleSubmit, register -- event hai
     const [error, setError] = useState('')
 
-    const login = async(data)=> {
+    const handlerLogin = async(data)=> {
         //console.log(data);
         
         setError('')
@@ -20,7 +20,7 @@ function Login () {
             const session = await authService.login(data)
             if (session) {
                 const userData = await authService.getCurrentUser()
-                if (userData) dispatch(authLogin(userData));
+                if (userData) dispatch(authLogin({userData}));
                 navigate('/')
             }
         } catch (error) {
@@ -50,7 +50,7 @@ function Login () {
 
                 {error && <p className="text-red-500 text-center">{error}</p>}
 
-                <form onSubmit={handleSubmit(login)} className="mt-8">
+                <form onSubmit={handleSubmit(handlerLogin)} className="mt-8">
                     <div className="space-y-5">
                         <Input 
                         label="Email: " 

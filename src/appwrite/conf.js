@@ -8,7 +8,7 @@ export class Service{
     Databases;
     bucket;
 
-    constructor(){
+    constructor() {
         this.client
             .setEndpoint(config.appwriteUrl)
             .setProject(config.appwriteProjectId);
@@ -126,10 +126,10 @@ export class Service{
         }
     }
 
-    getFilePreview(fileId){
+    getFilePreview(fileImageId){
         return this.bucket.getFilePreview(
             config.appwriteBucketId,
-            fileId
+            fileImageId
         )
     }
 }

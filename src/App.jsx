@@ -24,9 +24,9 @@ function App() {
   }, [])
 
   {/* console.log(process.env.REACT_APP_APPWRITE_URL); */} {/* error */} 
-  console.log(import.meta.env.VITE_APPWRITE_URL);
+  // console.log(import.meta.env.VITE_APPWRITE_URL);
 
-  // return !loading ? gu : (null)
+  // return !loading ? () : (null)
   return !loading ? (
     <div className='min-h-screen flex flex-wrap content-between bg-gray-400'>
        <div className='w-full block'>
