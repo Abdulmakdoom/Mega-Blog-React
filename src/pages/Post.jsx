@@ -2,12 +2,13 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import appwriteService from "../appwrite/conf";
 import { Button, Container } from "../components";
-import parse from "html-react-parser";
+import parse from "html-react-parser";  // The parser converts an HTML string to one or more React elements.
 import { useSelector } from "react-redux";
 
 export default function Post() {
     const [post, setPost] = useState(null);
-    const { slug } = useParams();
+    const { slug } = useParams();  // post/:id  yaha sai aa raha hai 
+    
     const navigate = useNavigate();
 
     const userData = useSelector((state) => state.auth.userData);
